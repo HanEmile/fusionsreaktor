@@ -1,6 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{tikz}
 
 \usetheme{Singapore}
 
@@ -20,22 +21,60 @@
   \section{Allgemeines}
     \begin{frame}
       \frametitle{Was ist ein Fusionsreaktor?}
-      Ein Kernfusionsreaktor oder Fusionsreaktor ist eine
-      technische Anlage, in der die Kernfusion von Deuterium und Tritium als
-      thermonukleare Reaktion kontrolliert abläuft.
+      Ein \textbf{Kernfusionsreaktor} oder \textbf{Fusionsreaktor} ist eine
+      technische Anlage, in der die \textbf{Kernfusion} von Deuterium und Tritium als
+      \textbf{thermonukleare Reaktion} kontrolliert abläuft.
+      \par
+      \raggedleft
+      Wikipedia - Kernfusionsreaktor
     \end{frame}
 
     \begin{frame}
-      \frametitle{Warum nutzen wir ihn nicht?}
+      \frametitle{Warum nutzen wir keine Fusionsreaktoren?}
       \center
-      Zu viel Energie rein \( \rightarrow \) zu wenig energie raus
+      Zu viel Energie rein \( \rightarrow \) zu wenig Energie raus
     \end{frame}
 
   \section{Physikalische Grundlagen}
+
     \begin{frame}
-      \frametitle{Was passiert?}
+      \frametitle{Stellaratoren / Tokamaks}
+      \begin{columns}
+        \column{0.5\textwidth}
+          \center
+          Stellatoren \( \rightarrow \) USA
+          \bigskip
+        \column{0.5\textwidth}
+          \center
+          Tokamaks \( \rightarrow \) Sowiet-Union
+      \end{columns}
+    \end{frame}
+
+    \begin{frame}
+      \frametitle{Was passiert bei der Kernfusion?}
       \center
-      Kernfusion von Deuterium und Tritium als thermonukleare Reaktion
+      Kernfusion von Deuterium und Tritium als thermonukleare Reaktion:
+
+      \bigskip
+      \pause
+      \begin{tikzpicture}
+      \node[draw] at (0, 0) (2H) { \( {}^2H \) };
+      \node[draw] at (0, -2) (3H) { \( {}^3H \) };
+      \node[draw] at (2, -1) (fusion) { \( Fusion \) };
+      \node[draw] at (6, 0) (4He) { \( {}^4He~+~3.5~MeV \) };
+      \node[draw] at (6, -2) (n) { \( {}^4He~+~3.5~MeV \) };
+
+      \draw[->] (2H) edge (fusion.west);
+      \draw[->] (3H) edge (fusion.west);
+      \draw[->] (fusion) -- (4He.west);
+      \draw[->] (fusion) -- (n.west);
+
+      \end{tikzpicture}
+
+      \bigskip
+
+      Ein \textbf{Deuterium}- und ein \textbf{Tritium}-Atomkern verschmelzen zu einem \textbf{Heliumkern} unter Freisetzung eines \textbf{schnellen Neutrons}.
+
     \end{frame}
 
     \begin{frame}
@@ -51,12 +90,21 @@
         \pause
       \end{itemize}
       \bigskip
-      \begin{equation}
-        D + T \rightarrow {}^4 H + n + 17,6~MeV
-      \end{equation}
-      \begin{equation}
-        E = mc^2
-        \end{equation}
+
+      \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+          \begin{equation*}
+            D + T \rightarrow {}^4 H + n + 17,6~MeV
+          \end{equation*}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \begin{equation*}
+            E = mc^2
+          \end{equation*}
+        \end{column}
+      \end{columns}
+
+
     \end{frame}
 
     \begin{frame}
