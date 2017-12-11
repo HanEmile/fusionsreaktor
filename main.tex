@@ -1,6 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{tikz}
 
 \usetheme{Singapore}
 
@@ -12,119 +13,196 @@
 \institute{Theodor-Fliedner-Gymnasium}
 \date{\today}
 
+
 \begin{document}
   \begin{frame}
     \titlepage
   \end{frame}
 
   \section{Allgemeines}
-    \begin{frame}
-      \frametitle{Was ist ein Fusionsreaktor?}
-      Ein Kernfusionsreaktor oder Fusionsreaktor ist eine
-      technische Anlage, in der die Kernfusion von Deuterium und Tritium als
-      thermonukleare Reaktion kontrolliert abläuft.
-    \end{frame}
+    \subsection{Titel}
 
-    \begin{frame}
-      \frametitle{Warum nutzen wir ihn nicht?}
-      \center
-      Zu viel Energie rein \( \rightarrow \) zu wenig energie raus
-    \end{frame}
+      \begin{frame}
+        \frametitle{Was ist ein Fusionsreaktor?}
+        Ein \textbf{Kernfusionsreaktor} oder \textbf{Fusionsreaktor} ist eine
+        technische Anlage, in der die \textbf{Kernfusion} von Deuterium und Tritium als
+        \textbf{thermonukleare Reaktion} kontrolliert abläuft.
+        \par
+        \raggedleft
+        Wikipedia - Kernfusionsreaktor
+      \end{frame}
+
+      \begin{frame}
+        \frametitle{Warum nutzen wir keine Fusionsreaktoren?}
+        \center
+        Zu viel Energie rein \( \rightarrow \) zu wenig Energie raus
+      \end{frame}
+
+    \subsection{Arten}
+
+      \begin{frame}
+        \frametitle{Stellaratoren / Tokamaks}
+        \begin{columns}
+          \column{0.5\textwidth}
+          \center
+          Stellatoren \( \rightarrow \) USA
+          \bigskip
+          \column{0.5\textwidth}
+          \center
+          Tokamaks \( \rightarrow \) Sowiet-Union
+        \end{columns}
+      \end{frame}
 
   \section{Physikalische Grundlagen}
-    \begin{frame}
-      \frametitle{Was passiert?}
-      \center
-      Kernfusion von Deuterium und Tritium als thermonukleare Reaktion
-    \end{frame}
 
-    \begin{frame}
-      \frametitle{Deuterium-Tritium-Reaktion}
-      \begin{itemize}
-        \item Atomkerne verschmelzen zu einem neuem Kern
-        \pause
-        \item Energie wird freigesetzt
-        \pause
-        \item Atomkerne kommen sich sehr nahe (2,5 Femtometer)
-        \pause
-        \item Masse Vorher \( > \) Masse Nachher \( \rightarrow \) Differenz wird zu Energie
-        \pause
-      \end{itemize}
-      \bigskip
-      \begin{equation}
-        D + T \rightarrow {}^4 H + n + 17,6~MeV
-      \end{equation}
-      \begin{equation}
-        E = mc^2
-        \end{equation}
-    \end{frame}
+    \subsection{Was Passiert?}
 
-    \begin{frame}
-      \frametitle{Fusion mit magnetischem Plasmaeinschluss}
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    \end{frame}
+      \begin{frame}
+        \frametitle{Was passiert bei der Kernfusion?}
+        \center
+        Kernfusion von Deuterium und Tritium als thermonukleare Reaktion:
+
+        \bigskip
+        \pause
+        \begin{tikzpicture}
+        \node[draw] at (0, 0) (2H) { \( {}^2H \) };
+        \node[draw] at (0, -2) (3H) { \( {}^3H \) };
+        \node[draw] at (2, -1) (fusion) { \( Fusion \) };
+        \node[draw] at (6, 0) (4He) { \( {}^4He~+~3,5~MeV \) };
+        \node[draw] at (6, -2) (n) { \( n~+~14,1~MeV \) };
+
+        \draw[->] (2H) edge (fusion.west);
+        \draw[->] (3H) edge (fusion.west);
+        \draw[->] (fusion) -- (4He.west);
+        \draw[->] (fusion) -- (n.west);
+
+        \end{tikzpicture}
+
+        \bigskip
+
+        Ein \textbf{Deuterium}- und ein \textbf{Tritium}-Atomkern verschmelzen zu einem \textbf{Heliumkern} unter Freisetzung eines \textbf{schnellen Neutrons}.
+
+      \end{frame}
+
+    \subsection{Reaktion}
+
+      \begin{frame}
+        \frametitle{Deuterium-Tritium-Reaktion}
+        \begin{itemize}
+          \item Atomkerne verschmelzen zu einem neuem Kern
+          \item Energie wird freigesetzt
+          \item Atomkerne kommen sich sehr nahe (2,5 Femtometer)
+          \item Masse Vorher \( > \) Masse Nachher \( \rightarrow \) Differenz wird zu Energie
+        \end{itemize}
+        \bigskip
+
+        \begin{columns}[T]
+          \begin{column}{0.5\textwidth}
+            \begin{equation*}
+              D + T \rightarrow {}^4 H + n + 17,6~MeV
+            \end{equation*}
+          \end{column}
+          \begin{column}{0.5\textwidth}
+            \begin{equation*}
+              E = mc^2
+            \end{equation*}
+          \end{column}
+        \end{columns}
+      \end{frame}
 
   \section{Technik}
+    \subsection{Allgemein}
 
-    \begin{frame}
-      \frametitle{Plasmaaufheizung}
-      \begin{itemize}
-        \item Plasma wird auf über 100 Mio. C aufgeheitzt
-        \pause
-        \item (Deuteriumkerne haben bei 100 Mio. C eine mittlere Geschwindigkeit von etwa 1000 km/s)
-      \end{itemize}
-    \end{frame}
+      \begin{frame}
+        \frametitle{Fusion mit magnetischem Plasmaeinschluss}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      \end{frame}
 
-    \begin{frame}
-      \frametitle{Plasmaaufheizung}
-      \framesubtitle{Elektrisches Aufheizen}
-      Das Plasma ist ein elektrischer Leiter und kann mittels eines induzierten elektrischen Stroms aufgeheizt werden. Dabei ist das Plasma die Sekundärspule eines Transformators. Allerdings steigt die Leitfähigkeit des Plasmas mit steigender Temperatur, so dass der elektrische Widerstand ab etwa 20–30 Millionen Grad bzw. 2 keV nicht mehr ausreicht, das Plasma stärker zu erhitzen.
-    \end{frame}
+    \subsection{Plasmaaufheizung}
 
-    \begin{frame}
-      \frametitle{Plasmaaufheizung}
-      \framesubtitle{Neutralteilchen-Einschuss}
-      Beim Einschießen schneller neutraler Atome in das Plasma (neutral beam injection, kurz NBI) wird die kinetische Energie dieser Atome – die im Plasma sofort ionisiert werden – durch Stöße auf das Plasma übertragen, wodurch sich dieses aufheizt.
-    \end{frame}
+      \begin{frame}
+        \frametitle{Plasmaaufheizung}
+        \begin{itemize}
+          \item Ziel: Plasma auf über 1000 grad Celsius aufzuheizen
+          \pause
+          \item Achtung: (Deuteriumkerne haben bei 100 Mio. C eine mittlere
+          Geschwindigkeit von etwa 1000 km/s)
+        \end{itemize}
+      \end{frame}
 
-    \begin{frame}
-      \frametitle{Plasmaaufheizung}
-      \framesubtitle{Elektromagnetische Wellen}
-      Mikrowellen können die Ionen und Elektronen im Plasma auf ihren Resonanzfrequenzen (Umlauffrequenz in der Schraubenlinie, die das Teilchen im Magnetfeld beschreibt) anregen und somit Energie in das Plasma übertragen. Diese Methoden des Aufheizens werden Ion Cyclotron Resonance Heating (ICRH), Electron Cyclotron Resonance Heating (ECRH) und Lower Hybrid Resonance Heating (LHRH) genannt.
-    \end{frame}
+      \begin{frame}
+        \frametitle{Plasmaaufheizung}
+        \framesubtitle{\underline{Elektrisches Aufheizen}}
+        Das Plasma ist ein elektrischer Leiter und kann mittels eines induzierten elektrischen Stroms aufgeheizt werden. Dabei ist das Plasma die Sekundärspule eines Transformators. Allerdings steigt die Leitfähigkeit des Plasmas mit steigender Temperatur, so dass der elektrische Widerstand ab etwa 20–30 Millionen Grad bzw. 2 keV nicht mehr ausreicht, das Plasma stärker zu erhitzen.
+      \end{frame}
 
-    \begin{frame}
-      \frametitle{Plasmaaufheizung}
-      \framesubtitle{Magnetische Kompression}
-      Das Plasma kann wie ein Gas durch schnelles (adiabatisches) Zusammenpressen erwärmt werden. Ein zusätzlicher Vorteil dieser Methode ist, dass zugleich die Plasmadichte erhöht wird. Nur von Magnetspulen mit veränderbarer Stromstärke erzeugte Magnetfelder sind geeignet, das Plasma zusammen zu pressen; von supraleitenden Magnetspulen erzeugte Magnetfelder sind dafür nicht geeignet, weil ihre Stärke unveränderlich ist.
-    \end{frame}
+      \begin{frame}
+        \frametitle{Plasmaaufheizung}
+        \framesubtitle{\underline{Neutralteilchen-Einschuss}}
+        Beim Einschießen schneller neutraler Atome in das Plasma (neutral beam injection, kurz NBI) wird die kinetische Energie dieser Atome – die im Plasma sofort ionisiert werden – durch Stöße auf das Plasma übertragen, wodurch sich dieses aufheizt.
+      \end{frame}
 
-    \begin{frame}
-      \frametitle{Magnetfeld}
-      lorem
-    \end{frame}
+      \begin{frame}
+        \frametitle{Plasmaaufheizung}
+        \framesubtitle{\underline{Elektromagnetische Wellen}}
+        Mikrowellen können die Ionen und Elektronen im Plasma auf ihren Resonanzfrequenzen (Umlauffrequenz in der Schraubenlinie, die das Teilchen im Magnetfeld beschreibt) anregen und somit Energie in das Plasma übertragen. Diese Methoden des Aufheizens werden Ion Cyclotron Resonance Heating (ICRH), Electron Cyclotron Resonance Heating (ECRH) und Lower Hybrid Resonance Heating (LHRH) genannt.
+      \end{frame}
+
+      \begin{frame}
+        \frametitle{Plasmaaufheizung}
+        \framesubtitle{Magnetische Kompression}
+        Das Plasma kann wie ein Gas durch schnelles (adiabatisches) Zusammenpressen erwärmt werden. Ein zusätzlicher Vorteil dieser Methode ist, dass zugleich die Plasmadichte erhöht wird. Nur von Magnetspulen mit veränderbarer Stromstärke erzeugte Magnetfelder sind geeignet, das Plasma zusammen zu pressen; von supraleitenden Magnetspulen erzeugte Magnetfelder sind dafür nicht geeignet, weil ihre Stärke unveränderlich ist.
+      \end{frame}
+
+    \subsection{Magnetfeld}
+
+      \begin{frame}
+        \frametitle{Magnetfeld}
+        \begin{itemize}
+          \item Hält das Plasma zusammen, damit es nicht die Gefäßwand berührt
+          \( \rightarrow \) Torusförmiges, verdrilltes Magnetfeld
+          \item Besondere Verformungen entfernen die unerwünschten Ionen und andere Verunreinigungen
+
+        \end{itemize}
+      \end{frame}
 
   \section{Brennstoff}
+    \subsection{Vorkommen / Beschaffung}
 
-    \begin{frame}
-      \frametitle{Vorkommen und Beschaffung}
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    \end{frame}
+      \begin{frame}
+        \frametitle{Vorkommen und Beschaffung}
 
-    \begin{frame}
-      \frametitle{Tritiumbrüten und Neutronenvermehrung}
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    \end{frame}
+        Auf der Erde gibt es:\\
 
-    \begin{frame}
-      \frametitle{Brennstoffnachfüllung}
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    \end{frame}
+        \( \approx 2,5 \cdot 10^{13}\) Tonnen Deuterium \( \rightarrow \) genug
+        ,aber kein Tritium!
 
-    \begin{frame}
-      \frametitle{Entfernen von Helium und Verunreinigungen}
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    \end{frame}
+        Es wird \( {}^6Li\) genutzt, dass in Tritium umgewandelt wird:
+
+        \begin{equation}
+          {}^6Li + n \rightarrow {}^4He + {}^3H+ 4,8MeV
+        \end{equation}
+
+      \end{frame}
+
+      \begin{frame}
+        \frametitle{Tritiumbrüten und Neutronenvermehrung}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      \end{frame}
+
+    \subsection{Brennstoffnachfüllung}
+
+      \begin{frame}
+        \frametitle{Brennstoffnachfüllung}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      \end{frame}
+
+    \subsection{Entfernen von Verunreinigungen}
+
+      \begin{frame}
+        \frametitle{Entfernen von Helium und Verunreinigungen}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      \end{frame}
 
   \section{Bau eines Reaktors}
 
@@ -144,9 +222,9 @@
 
   \section{Stand der Forschung}
 
-  \begin{frame}
-    \frametitle{Wo sind wir zurzeit???}
-  \end{frame}
+    \begin{frame}
+      \frametitle{Wo sind wir zurzeit???}
+    \end{frame}
 
   \section{Quellen / Weiteres}
 
