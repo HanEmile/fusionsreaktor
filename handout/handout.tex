@@ -1,0 +1,93 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english,ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage[onehalfspacing]{setspace}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\usepackage{listings}
+\lstset{ %
+  frame=single,	                   % adds a frame around the code
+  language=Python,                 % the language of the code
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+}
+
+\usepackage{hyperref}
+\hypersetup{
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black
+}
+
+\newcommand{\bold}{\textbf}
+\renewcommand{\arraystretch}{1.5}
+\newcommand{ \rarrow }{\( \rightarrow \)}
+
+\setlength\parindent{0pt}
+\setlength\parskip{10pt}
+\setlength{\footskip}{30pt}
+\setcounter{tocdepth}{3}
+
+%%% MAIN DOCUMENT BEGINS HERE %%%
+
+\begin{document}
+
+% \title{ Fusionsreaktoren }
+% \subtitle{Physik LK \the\year}
+
+% \author{
+%   Leon Schwarzer
+%   \and
+%   Emile Hansmaennel
+% }
+%
+% \date{\today}
+%
+% \maketitle
+
+\section*{Fusionsreaktoren Handout}
+
+\paragraph{Was ist ein Fusionsreaktor?}
+
+\begin{itemize}
+  \item Ein \textbf{Kernfusionsreaktor} oder \textbf{Fusionsreaktor} ist eine
+  technische Anlage, in der die \textbf{Kernfusion} von Deuterium \( {}^{2}De \)
+   und Tritium \( {}^{3}Tr \) als Thermonukleare Reaktion abläuft.
+\end{itemize}
+
+\paragraph{Warum nutzen wir zurzeit keine Fusionsreaktoren zur Energiegewinnung?}
+
+\begin{itemize}
+  \item Es muss zu viel energie in den Reaktor gegeben werden um Energie wieder
+  rauszubekommen. \( \rightarrow \) Die Energiebillanz ist negativ.
+\end{itemize}
+
+\paragraph{Was für Arten von Fusionsreaktoren gibt es?}
+
+\subparagraph{Stellatoren (USA)}
+\begin{itemize}
+  \item Erzeugen die Verdrillung des Feldes \textbf{ Komplizierte Formung ihrer
+  Magnetspulen }
+\end{itemize}
+
+\subparagraph{Tokamaks (Sowiet-Union)}
+\begin{itemize}
+  \item Erzeugen die Verdrillung des Feldes durch \textbf{ Induzieren eines
+  elektrischen Stroms im Plasma }
+
+\end{itemize}
+
+\end{document}

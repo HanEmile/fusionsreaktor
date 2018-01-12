@@ -1,0 +1,9 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einleitung}{2}{section.1}
+\contentsline {section}{\numberline {2}Vorgenhensweise, Materialien, Methoden (2-6 Seiten)}{2}{section.2}
+\contentsline {section}{\numberline {3}Ergebnisse (2-5 Seiten)}{2}{section.3}
+\contentsline {section}{\numberline {4}Ergebnisdiskussion (1 Seite)}{2}{section.4}
+\contentsline {section}{\numberline {5}Zusammenfassung (1/2 Seite)}{2}{section.5}
+\contentsline {section}{\numberline {6}Quellen und Literaturverweis}{2}{section.6}
+\contentsline {paragraph}{\nonumberline Herrn J\IeC {\"o}rg Thar}{2}{section*.3}
+\contentsline {paragraph}{\nonumberline Emile Hansmaennel}{2}{section*.4}
